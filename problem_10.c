@@ -1,5 +1,5 @@
 #include <iostream>
-
+/*把一个整数减去1之后再和原来的整数做位与运算，得到的结果相当于是把整数最右边的1换成0
 using namespace std;
 int Count(int n)
 {
