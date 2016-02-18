@@ -1,39 +1,29 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-void Pre(char *pstr);
-void Premutation(char *pstr, char *pbegin);
-
-void Pre(char *pstr)
+int FindGreateSumOfSubarray(int pdate[], int nLength)
 {
-	if (pstr == NULL)
-		return;
-	Premutation(pstr, pstr);
-}
-
-void Premutation(char *pstr, char *pbegin)
-{
-	if (*pbegin == '\0')
-		printf_s("%s ", pstr);
-	else
+	if (nLength <= 0)
+		return 0;
+	int nCursum = 0;
+	int nGreatestSum = -1;
+	for (int i = 0; i < nLength; i++)
 	{
-		for (char *pch = pbegin; *pch != '\0'; ++pch)
-		{
-			char temp = *pch;
-			*pch = *pbegin;
-			*pbegin = temp;
-			Premutation(pstr, pbegin + 1);
-
-			temp = *pch;
-			*pch = *pbegin;
-			*pbegin = temp;
-		}
+		if (nCursum <= 0)
+			nCursum = pdate[i];
+		else
+			nCursum += pdate[i];
+		if (nCursum > nGreatestSum)
+			nGreatestSum = nCursum;
 	}
+	return nGreatestSum;
 }
 
 int main(void)
 {
-	char s[5] = { 'a', 'b', 'c'};
-	Pre(s);
+	int pdate[9] = { -3, 2, 2, 10, -8, -7, 2, -5 };
+	int result;
+	result = FindGreateSumOfSubarray(pdate, 8);
+	cout << result << endl;
 	return 0;
 }
