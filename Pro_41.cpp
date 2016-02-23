@@ -3,7 +3,7 @@
 using namespace std;
 
 void PrintSequence(int small, int big);
-
+//试试好不好用
 void FindContinuousSeuence(int sum)
 {
 	int small = 1;
