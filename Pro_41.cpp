@@ -18,7 +18,7 @@ void FindContinuousSeuence(int sum)
 			cur += big;
 		}
 		else if (cur > sum)
-		{
+		{的
 			cur -= small;
 			small++;
 		}
