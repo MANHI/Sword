@@ -3,7 +3,6 @@
 using namespace std;
 
 void PrintSequence(int small, int big);
-//415分支
 void FindContinuousSeuence(int sum)
 {
 	int small = 1;
